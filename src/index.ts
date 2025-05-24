@@ -19,7 +19,7 @@ const text = fs.readFileSync("/Users/rchaser53/Desktop/gpt-repository-loader/nod
 // テキストを文書オブジェクトに変換
 // const text = "ここに要約したい長文を入れる...";
 const splitter = new RecursiveCharacterTextSplitter({
-  chunkSize: 1000,
+  chunkSize: 90000, // https://github.com/langchain-ai/langchainjs/issues/6854#issuecomment-2366862510
   chunkOverlap: 200,
 });
 const documents = await splitter.createDocuments([text]);
